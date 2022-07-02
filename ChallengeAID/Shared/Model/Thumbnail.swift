@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct Thumbnail: Codable {
-    var imageUrl: String?
+struct Thumbnail: Codable,Hashable {
+    
+    var imageURL: String?
     var imageType: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case imageURL = "path"
+        case imageType = "extension"
+    }
 }

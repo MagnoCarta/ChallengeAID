@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct Comic {
+struct Comic: Hashable {
+    
+    
     var id: Int?
     var name: String?
     var thumbnail: Thumbnail?

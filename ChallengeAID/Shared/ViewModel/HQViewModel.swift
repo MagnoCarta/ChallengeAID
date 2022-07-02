@@ -13,7 +13,11 @@ extension HQView {
     @MainActor class HQViewModel: ObservableObject {
         
         func fetchHqs() {
-            MarvelServiceAPI.shared.loadComics(page: page)
+            MarvelServiceAPI.shared.loadComics(page: page,completion: { [weak self] comics in
+                DispatchQueue.main.async {
+                    self!.comics.append(contentsOf: comics)
+                }
+            })
         }
         
         func alertError() {

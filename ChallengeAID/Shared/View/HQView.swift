@@ -20,14 +20,14 @@ struct HQView: View {
     
     var body: some View {
         viewModel.fetchHqs()
-#if os(iOS)
         return NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(["A"],id:\.self) { endpoint in
+                    ForEach(viewModel.comics,id:\.self) { comic in
                         NavigationLink {
                             //NavigationLazyView(presenter.moveToEndpointListView(endpoint: endpoint))
                         } label: {
+                            buildCard()
                         }
                         .frame(width: 150, height: 150, alignment: .center)
                     }
@@ -37,28 +37,11 @@ struct HQView: View {
             .background(Color.purple)
             .navigationTitle("Endpoints")
         }
-#elseif os(macOS)
-        return NavigationView {
-            List(presenter.getNames(),id:\.self) { endpoint in
-                        NavigationLink {
-                            presenter.moveToEndpointListView(endpoint: endpoint)
-                        } label: {
-                            buildCard(endpoint: endpoint)
-                        }
-                        .frame(width: 150, height: 150, alignment: .center)
-                    }
-                }
-            .navigationTitle("Endpoints")
-            .navigationViewStyle(.columns)
-#endif
     }
     
-//    func buildCard(endpoint: Endpoint) -> EndpointCard {
-//        let interactor = EndpointCardInteractor()
-//        let endpointPresenter = EndpointCardPresenter(interactor: interactor)
-//        endpointPresenter.fetchCard(endpoint: endpoint, name: endpoint.rawValue, imageURL: "")
-//        return EndpointCard(presenter: endpointPresenter, isTextCentered: true)
-//    }
+    func buildCard() -> Card {
+        return Card()
+    }
     
 }
 
