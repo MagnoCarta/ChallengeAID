@@ -27,6 +27,7 @@ class MarvelServiceAPI {
             
             do {
                 let jsonDecoder = JSONDecoder()
+                
                 let json = try! jsonDecoder.decode(MarvelAPIResponse.self, from: data)
                 guard let results = json.results else { return }
                 completion(results)

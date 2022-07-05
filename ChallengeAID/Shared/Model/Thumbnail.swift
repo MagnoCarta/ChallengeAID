@@ -1,5 +1,5 @@
 //
-//  Thumbnail.swift
+//  ComicThumbnail.swift
 //  ChallengeAID
 //
 //  Created by Rodrigo Matos Aguiar on 02/07/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Thumbnail: Codable,Hashable {
+struct Thumbnail: Codable, Hashable {
     
     var imageURL: String?
     var imageType: String?

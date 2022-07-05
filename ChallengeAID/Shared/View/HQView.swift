@@ -38,8 +38,9 @@ struct HQView: View {
                 })
                 .padding()
             }
-            .background(Color.purple)
-            .navigationTitle("Endpoints")
+            
+            .background(Color.orangeBackground)
+            .navigationTitle("Comics")
         }
     }
     
