@@ -10,6 +10,8 @@ import SwiftUI
 
 struct Card: View {
 
+    let name: String
+    let imageURL: String
     
     var body: some View {
         return setUpView()
@@ -22,8 +24,14 @@ struct Card: View {
             .shadow(color: Color.gray, radius: 3, x: 0, y: 0)
             .overlay(alignment: .center, content: {
                     VStack {
-                        AsyncImage(url: URL(string: "https:"))
-                        Text("MOCKPadrao")
+                        AsyncImage(url: URL(string: imageURL)) {image in
+                        image
+                            .resizable()
+                            .edgesIgnoringSafeArea(.all)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                        Text(name)
                             .foregroundColor(.white)
                     }
             })

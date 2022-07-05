@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57188F212874AD9A00267DAA /* HQDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57188F202874AD9A00267DAA /* HQDetailView.swift */; };
+		57188F222874AD9A00267DAA /* HQDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57188F202874AD9A00267DAA /* HQDetailView.swift */; };
+		57188F242874AE3400267DAA /* HQDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57188F232874AE3400267DAA /* HQDetailViewModel.swift */; };
+		57188F252874AE3400267DAA /* HQDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57188F232874AE3400267DAA /* HQDetailViewModel.swift */; };
 		5754CB5C2870C8F50041135E /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754CB5B2870C8F50041135E /* Author.swift */; };
 		5754CB5D2870C8F50041135E /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754CB5B2870C8F50041135E /* Author.swift */; };
 		5754CB5F2870CB840041135E /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754CB5E2870CB840041135E /* Thumbnail.swift */; };
@@ -61,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57188F202874AD9A00267DAA /* HQDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQDetailView.swift; sourceTree = "<group>"; };
+		57188F232874AE3400267DAA /* HQDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQDetailViewModel.swift; sourceTree = "<group>"; };
 		5754CB5B2870C8F50041135E /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		5754CB5E2870CB840041135E /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		5754CB612870D1CE0041135E /* MarvelAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPIResponse.swift; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 			children = (
 				57C4C252286FB884001EA1BD /* HQViewModel+Methods.swift */,
 				57C4C255286FB95C001EA1BD /* HQViewModel.swift */,
+				57188F232874AE3400267DAA /* HQDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 			children = (
 				57C4C246286FA77A001EA1BD /* HQView.swift */,
 				5754CB64287106EF0041135E /* Card.swift */,
+				57188F202874AD9A00267DAA /* HQDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,12 +408,14 @@
 				57C4C22B286FA6D8001EA1BD /* ChallengeAIDApp.swift in Sources */,
 				57C4C253286FB884001EA1BD /* HQViewModel+Methods.swift in Sources */,
 				5754CB5F2870CB840041135E /* Thumbnail.swift in Sources */,
+				57188F212874AD9A00267DAA /* HQDetailView.swift in Sources */,
 				57C4C22F286FA6D8001EA1BD /* Persistence.swift in Sources */,
 				57C4C250286FAD1F001EA1BD /* Character.swift in Sources */,
 				57C4C256286FB95C001EA1BD /* HQViewModel.swift in Sources */,
 				57C4C229286FA6D8001EA1BD /* ChallengeAID.xcdatamodeld in Sources */,
 				57C4C22D286FA6D8001EA1BD /* ContentView.swift in Sources */,
 				5754CB5C2870C8F50041135E /* Author.swift in Sources */,
+				57188F242874AE3400267DAA /* HQDetailViewModel.swift in Sources */,
 				5754CB65287106EF0041135E /* Card.swift in Sources */,
 				57C4C25A286FBC26001EA1BD /* MarvelServiceAPI.swift in Sources */,
 				57C4C247286FA77A001EA1BD /* HQView.swift in Sources */,
@@ -418,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57188F222874AD9A00267DAA /* HQDetailView.swift in Sources */,
 				57C4C22C286FA6D8001EA1BD /* ChallengeAIDApp.swift in Sources */,
 				57C4C257286FB95C001EA1BD /* HQViewModel.swift in Sources */,
 				57C4C230286FA6D8001EA1BD /* Persistence.swift in Sources */,
@@ -429,6 +440,7 @@
 				57C4C22A286FA6D8001EA1BD /* ChallengeAID.xcdatamodeld in Sources */,
 				57C4C251286FAD1F001EA1BD /* Character.swift in Sources */,
 				57C4C254286FB884001EA1BD /* HQViewModel+Methods.swift in Sources */,
+				57188F252874AE3400267DAA /* HQDetailViewModel.swift in Sources */,
 				57C4C24E286FACE4001EA1BD /* Comic.swift in Sources */,
 				57C4C22E286FA6D8001EA1BD /* ContentView.swift in Sources */,
 			);

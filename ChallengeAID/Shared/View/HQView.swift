@@ -16,6 +16,7 @@ struct HQView: View {
         GridItem(.flexible()),
     ]
     let height: CGFloat = 150
+    @State var sheetVisible: Bool = false
     @StateObject private var viewModel = HQViewModel()
     
     var body: some View {
@@ -24,14 +25,17 @@ struct HQView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.comics,id:\.self) { comic in
-                        NavigationLink {
-                            //NavigationLazyView(presenter.moveToEndpointListView(endpoint: endpoint))
-                        } label: {
-                            buildCard()
-                        }
-                        .frame(width: 150, height: 150, alignment: .center)
+                        buildCard(name: comic.name!,imageURL: comic.thumbnail?.smallPortraitURL ?? "")
+                            .onTapGesture {
+                                sheetVisible = true
+                                viewModel.selectedComic = comic
+                            }
+                            .frame(width: 150, height: 150, alignment: .center)
                     }
                 }
+                .sheet(isPresented: $sheetVisible, content: {
+                    HQDetailView(comic: viewModel.selectedComic!)
+                })
                 .padding()
             }
             .background(Color.purple)
@@ -39,14 +43,8 @@ struct HQView: View {
         }
     }
     
-    func buildCard() -> Card {
-        return Card()
+    func buildCard(name: String,imageURL: String) -> Card {
+        return Card(name: name,imageURL: imageURL)
     }
     
 }
-
-//struct HQView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HQView()
-//    }
-//}
