@@ -18,7 +18,7 @@ class MarvelServiceAPI {
     
     private init() {}
     
-    func loadComics(page: Int) {
+    func loadComics(page: Int,completion: @escaping ([Comic]) -> Void) {
         guard let url = getUrlComic(page: page) else { return }
         let request = getRequestForURL(url: url)
         
@@ -27,8 +27,10 @@ class MarvelServiceAPI {
             
             do {
                 let jsonDecoder = JSONDecoder()
-                let json = try! jsonDecoder.decode(MarvelAPIResponse.self, from: data)
                 
+                let json = try! jsonDecoder.decode(MarvelAPIResponse.self, from: data)
+                guard let results = json.results else { return }
+                completion(results)
             } catch {
                 
             }

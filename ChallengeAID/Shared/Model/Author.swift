@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Author: Codable {
+struct Author: Codable, Hashable {
     var name: String?
     var role: String?
 }

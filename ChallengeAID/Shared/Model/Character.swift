@@ -8,13 +8,21 @@
 import Foundation
 import SwiftUI
 
-class Character: Codable {
+class Character: Codable,Hashable {
     
+    var id: Int?
     var title: String?
-    var imageURL: String?
+    var thumbnail: Thumbnail?
     var summary: String?
     var comicList: [Comic]?
     var authors: [String]?
     var favorite: Bool?
-
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
